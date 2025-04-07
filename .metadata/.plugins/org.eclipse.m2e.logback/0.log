@@ -1,0 +1,31 @@
+2025-04-07 09:45:50,784 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
+2025-04-07 09:47:23,114 [Worker-1: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:New_Retail_Management_System_Back:0.0.1-SNAPSHOT @ E:\Retail_Management_System_backend\New_Retail_Management_System_Back\pom.xml.
+2025-04-07 09:47:25,022 [Worker-1: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /New_Retail_Management_System_Back/src/main/java
+2025-04-07 09:47:25,025 [Worker-1: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /New_Retail_Management_System_Back/src/main/resources
+2025-04-07 09:47:25,030 [Worker-1: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /New_Retail_Management_System_Back/src/main/resources
+2025-04-07 09:47:25,035 [Worker-1: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /New_Retail_Management_System_Back/src/test/java
+2025-04-07 09:47:25,037 [Worker-1: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /New_Retail_Management_System_Back/src/test/resources
+2025-04-07 09:47:25,867 [Worker-1: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 5 sec
+2025-04-07 09:47:25,876 [Worker-1: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-04-07 09:47:26,398 [Worker-1: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:New_Retail_Management_System_Back:0.0.1-SNAPSHOT @ E:\Retail_Management_System_backend\New_Retail_Management_System_Back\pom.xml.
+2025-04-07 09:47:27,275 [Worker-1: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /New_Retail_Management_System_Back/src/main/java
+2025-04-07 09:47:27,276 [Worker-1: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /New_Retail_Management_System_Back/src/main/resources
+2025-04-07 09:47:27,278 [Worker-1: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /New_Retail_Management_System_Back/src/main/resources
+2025-04-07 09:47:27,279 [Worker-1: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /New_Retail_Management_System_Back/src/test/java
+2025-04-07 09:47:27,280 [Worker-1: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /New_Retail_Management_System_Back/src/test/resources
+2025-04-07 09:47:28,032 [Worker-1: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 0.00 sec 
+2025-04-07 09:47:28,090 [Worker-12: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-04-07 09:47:28,773 [Worker-12: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:New_Retail_Management_System_Back:0.0.1-SNAPSHOT @ E:\Retail_Management_System_backend\New_Retail_Management_System_Back\pom.xml.
+2025-04-07 09:47:29,740 [Worker-12: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /New_Retail_Management_System_Back/src/main/java
+2025-04-07 09:47:29,742 [Worker-12: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /New_Retail_Management_System_Back/src/main/resources
+2025-04-07 09:47:29,743 [Worker-12: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /New_Retail_Management_System_Back/src/main/resources
+2025-04-07 09:47:29,744 [Worker-12: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /New_Retail_Management_System_Back/src/test/java
+2025-04-07 09:47:29,745 [Worker-12: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /New_Retail_Management_System_Back/src/test/resources
+2025-04-07 09:47:30,325 [Worker-12: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 0.00 sec 
+2025-04-07 09:47:31,716 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-04-07 09:47:31,743 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-04-07 09:47:31,751 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\Retail_Management_System_backend\New_Retail_Management_System_Back\src\test\resources
+2025-04-07 09:51:10,692 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-04-07 09:51:31,512 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-04-07 09:51:31,546 [Worker-11: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 0.00 sec, update config takes 0.00 sec 
+2025-04-07 09:54:44,952 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
