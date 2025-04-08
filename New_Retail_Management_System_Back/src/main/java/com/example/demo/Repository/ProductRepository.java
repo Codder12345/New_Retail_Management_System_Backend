@@ -2,6 +2,7 @@ package com.example.demo.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,33 +19,42 @@ public class ProductRepository {
 	@Autowired
 	JdbcTemplate jdbctemplate;
 	
-	public boolean isAddNewProdu(Product employee)
+	public boolean isAddNewProduct(Product product)
 	{
-		int value =jdbctemplate.update("insert into employee value('0',?,?,?)",new PreparedStatementSetter()
+		int value =jdbctemplate.update("insert into employee value('0',?,?,?,?,?,?)",new PreparedStatementSetter()
 				{
 
 					@Override
 					public void setValues(PreparedStatement ps) throws SQLException {
-					
 						
+						ps.setString(1, product.getProductName());
+						 ps.setInt(2, product.getProductPrice());
+					        ps.setInt(3, product.getCategoryID());
+					        ps.setString(4, product.getPBrand());
+					        ps.setInt(5, product.getStockQuantity());
+					        ps.setString(6, product.getImageUrl());
 					}
 				
 				});
 		return value>0?true:false;
 				
 	}
-	public List<Product> getAllProdus(){ 
+	public List<Product> getAllProducts(){ 
 		list =jdbctemplate.query("select *from employee", new RowMapper<Product>()
 	{
 		@Override
 		public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
 			
-			Product emp = new Product();
-			emp.setId(rs.getInt(1));
-			emp.setName(rs.getString(2));
-			emp.setEmail(rs.getString(3));
-			emp.setContact(rs.getString(4));
-			return emp;
+			Product pro = new Product();
+			   pro.setProductID(rs.getLong("ProductID"));
+	            pro.setProductName(rs.getString("ProductName"));
+	            pro.setProductPrice(rs.getInt("ProductPrice"));
+	            pro.setCategoryID(rs.getInt("CategoryID"));
+	            pro.setPBrand(rs.getString("PBrand"));
+	            pro.setStockQuantity(rs.getInt("StockQuantity"));
+	            pro.setImageUrl(rs.getString("ImageUrl"));
+			
+			return pro;
 		}
 	});
 		return list;
