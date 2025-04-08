@@ -1,6 +1,6 @@
 package com.example.demo.exception;
 
-public class CategoryNotFoundException {
+public class CategoryNotFoundException extends RuntimeException {
 
 	private String message;
 	public CategoryNotFoundException(String message)

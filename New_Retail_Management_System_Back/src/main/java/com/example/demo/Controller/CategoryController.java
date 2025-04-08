@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.example.demo.Model.Category;
 import com.example.demo.Service.CategoryService;
+import com.example.demo.exception.CategoryNotFoundException;
 
 
 public class CategoryController {
