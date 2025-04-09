@@ -17,6 +17,7 @@ import com.example.demo.exception.CategoryNotFoundException;
 public class CategoryController {
 	@Autowired
 	CategoryService catservice;
+	
 	@PostMapping("/addCategory") 
 	public String createEmployee(@RequestBody Category category)
 	{

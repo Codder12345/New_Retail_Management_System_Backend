@@ -14,14 +14,13 @@ import java.util.List;
 
 @Repository("userRepo")
 public class UserRepository {
-
+	List<User>list;
     @Autowired
     JdbcTemplate jdbcTemplate;
 
     
     public boolean isAddNewUser(User user) {
-        int value = jdbcTemplate.update(
-            "insert into user values('0',?, ?, ?)", new PreparedStatementSetter() {
+      int value = jdbcTemplate.update("insert into user values(?, ?, ?)", new PreparedStatementSetter() {
                 public void setValues(PreparedStatement ps) throws SQLException {
                     ps.setString(1, user.getUserName());
                     ps.setString(2, user.getPassword());
@@ -56,7 +55,7 @@ public class UserRepository {
 
    
     public List<User> getAllUsers() {
-        return jdbcTemplate.query("select * from User", new RowMapper<User>() {
+  list = jdbcTemplate.query("select * from User", new RowMapper<User>() {
                 public User mapRow(ResultSet rs, int rowNum) throws SQLException {
                     User u = new User();
                     u.setUserID(rs.getInt("UserID"));
@@ -67,5 +66,6 @@ public class UserRepository {
                 }
             }
         );
+   return list;
     }
 }

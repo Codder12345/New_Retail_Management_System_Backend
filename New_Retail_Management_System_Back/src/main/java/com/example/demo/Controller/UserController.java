@@ -1,6 +1,9 @@
 package com.example.demo.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Model.User;
 import com.example.demo.Service.UserService;
+import com.example.demo.exception.UserNotFoundException;
 
 @RestController
 @RequestMapping("/api/User")
@@ -16,7 +20,7 @@ public class UserController {
 	@Autowired
 	UserService useservice ;
 	
-	@PostMapping
+	@PostMapping("/adduser")
 	public String addUser (@RequestBody User user)
 	{
 		boolean b =useservice.isAddNewUser(user);
@@ -47,6 +51,16 @@ public class UserController {
 	    }
 		
 	}
-
+	 @GetMapping("/viewAllUsers")
+	    public List<User> getAllUsers() {
+	        List<User> list = useservice.getAllUser();
+	        if (list.size() != 0) {
+	            return list;
+	        } else {
+	            throw new UserNotFoundException("There is no user data in the database table.");
+	        }
+	
+	
+	 }
 
 }
