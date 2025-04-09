@@ -21,7 +21,7 @@ public class ProductRepository {
 	
 	public boolean isAddNewProduct(Product product)
 	{
-		int value =jdbctemplate.update("insert into products value('0',?,?,?,?,?,?)",new PreparedStatementSetter()
+		int value =jdbctemplate.update("insert into products values('0',?,?,?,?,?,?)",new PreparedStatementSetter()
 				{
 
 					@Override

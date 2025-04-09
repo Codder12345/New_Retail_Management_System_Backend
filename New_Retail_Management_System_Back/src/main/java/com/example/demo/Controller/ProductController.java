@@ -6,29 +6,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.Model.Product;
 import com.example.demo.Service.ProductService;
 import com.example.demo.exception.ProductNotFoundException;
 
+
+@RestController
+@RequestMapping("/api/product")
 public class ProductController {
 
 	
 	@Autowired
 	ProductService proservice;
 	@PostMapping("/addProduct") 
-	public String createEmployee(@RequestBody Product product)
+	public String addProduct(@RequestBody Product product)
 	{
 		boolean b =proservice.isAddNewProduct(product);
 		if(b)
 		{
-			return "Employee Added";
+			return "product Added";
 		}
-		  return "employee Not Added";
+		  return "product Not Added";
 	}
 	
 	@GetMapping("/viewAllProduct")
-	public List<Product> getAllEmployees()
+	public List<Product> getAllProducts()
 	{
 		List <Product> list= proservice.getAllProducts();
 		if(list.size()!=0)
