@@ -21,7 +21,7 @@ public class ProductRepository {
 	
 	public boolean isAddNewProduct(Product product)
 	{
-		int value =jdbctemplate.update("insert into employee value('0',?,?,?,?,?,?)",new PreparedStatementSetter()
+		int value =jdbctemplate.update("insert into products value('0',?,?,?,?,?,?)",new PreparedStatementSetter()
 				{
 
 					@Override
@@ -40,13 +40,13 @@ public class ProductRepository {
 				
 	}
 	public List<Product> getAllProducts(){ 
-		list =jdbctemplate.query("select *from employee", new RowMapper<Product>()
+		list =jdbctemplate.query("select *from products", new RowMapper<Product>()
 	{
 		@Override
 		public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
 			
 			Product pro = new Product();
-			   pro.setProductID(rs.getLong("ProductID"));
+			   pro.setProductID(rs.getInt("ProductID"));
 	            pro.setProductName(rs.getString("ProductName"));
 	            pro.setProductPrice(rs.getInt("ProductPrice"));
 	            pro.setCategoryID(rs.getInt("CategoryID"));
