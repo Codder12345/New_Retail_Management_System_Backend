@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Model.Category;
+import com.example.demo.Model.User;
 import com.example.demo.Repository.CategoryRepository;
 
 
@@ -18,6 +19,7 @@ public class CategoryService {
 	{
 		return catRepo.isAddNewCategory(category);
     }
+	
 	
 	public List<Category> getAllCategories() {
 		
