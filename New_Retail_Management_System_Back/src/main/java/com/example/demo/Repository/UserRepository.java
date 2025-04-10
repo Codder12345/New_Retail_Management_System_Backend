@@ -20,17 +20,22 @@ public class UserRepository {
 
     
     public boolean isAddNewUser(User user) {
-        int value = jdbcTemplate.update(
-            "insert into user values('0',?, ?, ?)", new PreparedStatementSetter() {
+
+      
+      int value = jdbcTemplate.update("insert into user(UserName , Password, roleID) values(?, ?, ?)", new PreparedStatementSetter() {
+
                 public void setValues(PreparedStatement ps) throws SQLException {
                     ps.setString(1, user.getUserName());
                     ps.setString(2, user.getPassword());
                     ps.setInt(3, user.getRoleID());
                 }
-            }
-        );
-        return value > 0;
+      
+    });
+      return value>0?true:false;
+  	
     }
+
+	
 
 
     public User loginUser(String username, String password) {
@@ -40,8 +45,7 @@ public class UserRepository {
                     ps.setString(2, password);
                 }
             },
-            new RowMapper<User>() {
-                public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+            new RowMapper<User>() { public User mapRow(ResultSet rs, int rowNum) throws SQLException {
                     User u = new User();
                     u.setUserID(rs.getInt("UserID"));
                     u.setUserName(rs.getString("UserName"));
@@ -68,4 +72,15 @@ public class UserRepository {
             }
         );
     }
+    
+    
+   
+   
+
+
+    
+  
+    	
+    
+
 }
