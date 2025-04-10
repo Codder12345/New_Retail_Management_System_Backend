@@ -20,10 +20,14 @@ public class UserRepository {
 
     
     public boolean isAddNewUser(User user) {
+<<<<<<< Updated upstream
 
       
       int value = jdbcTemplate.update("insert into user(UserName , Password, roleID) values(?, ?, ?)", new PreparedStatementSetter() {
 
+=======
+      int value = jdbcTemplate.update("insert into user(UserName , Password, roleID) values(?, ?, ?)", new PreparedStatementSetter() {
+>>>>>>> Stashed changes
                 public void setValues(PreparedStatement ps) throws SQLException {
                     ps.setString(1, user.getUserName());
                     ps.setString(2, user.getPassword());

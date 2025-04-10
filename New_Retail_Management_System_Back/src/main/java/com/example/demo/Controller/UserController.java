@@ -1,13 +1,20 @@
 package com.example.demo.Controller;
 
+<<<<<<< Updated upstream
 
 import java.util.ArrayList;
 
+=======
+import java.util.ArrayList;
+>>>>>>> Stashed changes
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -68,6 +75,7 @@ public class UserController {
 	        }
 	 }
 	
+<<<<<<< Updated upstream
 
 	
 	
@@ -78,5 +86,25 @@ public class UserController {
 
 	
 
+=======
+	
+	 
+	/* Search User 
+	 
+	  @GetMapping("/search/{uid}")
+	  public User searchUser(@PathVariable Integer uid) {
+	      for (int i = 0; i < list.size(); i++) {
+	    	  if (list.get(i).getUserID() == uid) {
+
+	              return list.get(i);
+	          }
+	      }
+	      return null;
+	  }
+*/
+
+
+	
+>>>>>>> Stashed changes
 
 }
