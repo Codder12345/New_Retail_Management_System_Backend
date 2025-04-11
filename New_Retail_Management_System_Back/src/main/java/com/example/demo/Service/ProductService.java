@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Model.Product;
+
 import com.example.demo.Repository.ProductRepository;
 @Service("proservice")
 public class ProductService {
@@ -19,5 +20,19 @@ public class ProductService {
 	{
 		return proRepo.getAllProducts();
 		
+	}
+	public Product searchproductById(int id)
+	{
+		return proRepo.searchProductById(id);
+	}
+	
+	public Product deletehProductById(int id)
+	{
+		return proRepo.deletehProductById(id);
+	}
+	
+	public Product updateProductById(int id ,Product updatedProduct)
+	{
+		return proRepo.updateProductById(id, updatedProduct);
 	}
 }
