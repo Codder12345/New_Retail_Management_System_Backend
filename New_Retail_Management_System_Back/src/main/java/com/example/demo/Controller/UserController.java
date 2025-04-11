@@ -1,21 +1,14 @@
 package com.example.demo.Controller;
 
-<<<<<<< Updated upstream
 
-import java.util.ArrayList;
-
-=======
-import java.util.ArrayList;
->>>>>>> Stashed changes
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,13 +20,14 @@ import com.example.demo.exception.UserNotFoundException;
 @RestController
 @RequestMapping("/api/User")
 public class UserController {
+
 	
 	@Autowired
 	UserService useservice ;
-	List<User> list = new ArrayList<>();
+	List<User> list;
 
 	
-	@PostMapping
+	@PostMapping("/adduser")
 	public String addUser (@RequestBody User user)
 	{
 		boolean b =useservice.isAddNewUser(user);
@@ -54,7 +48,7 @@ public class UserController {
 	    User loggedInUser = useservice.login(username, password);
 
 	    if (loggedInUser != null) {
-	        int roleId = loggedInUser.getRoleID();
+	        int roleId = loggedInUser.getRoleId();
 	        if (roleId == 1) return "redirect:/admin/dashboard";
 	        else if (roleId == 2) return "redirect:/manager/dashboard";
 	        else if (roleId == 3) return "redirect:/cashier/dashboard";
@@ -75,36 +69,39 @@ public class UserController {
 	        }
 	 }
 	
-<<<<<<< Updated upstream
-
-	
-	
-	 
-	 
-
-
 
 	
 
-=======
-	
-	 
-	/* Search User 
-	 
-	  @GetMapping("/search/{uid}")
-	  public User searchUser(@PathVariable Integer uid) {
-	      for (int i = 0; i < list.size(); i++) {
-	    	  if (list.get(i).getUserID() == uid) {
+    @GetMapping("/searchuser/{id}")
+    public User searchUserById(@PathVariable int id) {
+        User user = useservice.searchUserById(id);
 
-	              return list.get(i);
-	          }
-	      }
-	      return null;
-	  }
-*/
+        if (user != null) {
+            return user;
+        } else {
+            throw new UserNotFoundException("User with ID " + id + " not found.");
+        }
+    }
 
+    @DeleteMapping("/deleteuser/{id}")
+    public User deleteUserById(@PathVariable int id) {
+        User user = useservice.deletehUserById(id);
 
-	
->>>>>>> Stashed changes
+        if (user != null) {
+            return user ;
+        } else {
+            throw new UserNotFoundException("User with ID " + id + " not found.");
+        }
+    }
 
+    @PutMapping("/updateuser/{id}")
+    public User updateUserById(@PathVariable int id, @RequestBody User updatedUser) {
+        User user = useservice.updateUserById(id, updatedUser);
+
+        if (user != null) {
+            return user; 
+        } else {
+            throw new UserNotFoundException("User with ID " + id + " not found.");
+        }
+    }
 }

@@ -28,6 +28,19 @@ public class UserService {
 		return useRepo.getAllUsers();
 		
 	}
-
+	public User searchUserById(int id)
+	{
+		return useRepo.searchUserById(id);
+	}
+	
+	public User deletehUserById(int id)
+	{
+		return useRepo.deletehUserById(id);
+	}
+	public User updateUserById(int id, User updateUser)
+	{
+		return useRepo.updateUserById(id, updateUser);
+	}
 
 }
+
