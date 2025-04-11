@@ -20,10 +20,22 @@ public class CategoryService {
 		return catRepo.isAddNewCategory(category);
     }
 	
-	
 	public List<Category> getAllCategories() {
 		
 		return catRepo.getAllCategories();
+	}
+	public Category searchCategoryById(int id)
+	{
+		return catRepo.searchCategoryById(id);
+	}
+	
+	public Category deletehCategoryById(int id)
+	{
+		return catRepo.deletehCategoryById(id);
+	}
+	public Category updateCategoryById(int id, Category updatedCategory)
+	{
+		return catRepo.updateCategoryById(id, updatedCategory);
 	}
 }
 

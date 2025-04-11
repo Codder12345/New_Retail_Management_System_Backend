@@ -23,5 +23,12 @@ public class GlobalExceptionHandler {
 	{
 		return new ErrorMessage(HttpStatus.NOT_FOUND.value(),exception.getMessage() );
 	}
+	
+	@ExceptionHandler(UserNotFoundException.class)
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	public @ResponseBody ErrorMessage handleUserException(CategoryNotFoundException exception)
+	{
+		return new ErrorMessage(HttpStatus.NOT_FOUND.value(),exception.getMessage() );
+	}
 	 
 }
