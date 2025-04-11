@@ -1,5 +1,6 @@
 package com.example.demo.Repository;
 
+import com.example.demo.Model.Product;
 import com.example.demo.Model.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,13 @@ public class UserRepository {
 
     
     public boolean isAddNewUser(User user) {
+<<<<<<< Updated upstream
       int value = jdbcTemplate.update("insert into User(UserName, Password, RoleID) values(?, ?, ?)"
 , new PreparedStatementSetter() {
 
+=======
+      int value = jdbcTemplate.update("insert into User values('0',?, ?, ?)", new PreparedStatementSetter() {
+>>>>>>> Stashed changes
                 public void setValues(PreparedStatement ps) throws SQLException {
                     ps.setString(1, user.getUserName());
                     ps.setString(2, user.getPassword());
@@ -73,7 +78,10 @@ public class UserRepository {
         );
     }
     
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     public User searchUserById(int id) {
       
         list = jdbcTemplate.query("select * from User where UserID = ?",new PreparedStatementSetter() {
@@ -86,10 +94,17 @@ public class UserRepository {
                 @Override
                 public User mapRow(ResultSet rs, int rowNum) throws SQLException {
                     User user = new User();
+<<<<<<< Updated upstream
                     user.setUserId(rs.getInt("UserID"));
                     user.setUserName(rs.getString("UserName"));
                     user.setPassword(rs.getString("Password"));
                     user.setRoleId(rs.getInt("RoleID"));
+=======
+                    user.setUserID(rs.getInt("UserID"));
+                    user.setUserName(rs.getString("UserName"));
+                    user.setPassword(rs.getString("Password"));
+                    user.setRoleID(rs.getInt("RoleID"));
+>>>>>>> Stashed changes
                     return user;
                 }
             }
@@ -116,10 +131,17 @@ public class UserRepository {
                       @Override
                       public User mapRow(ResultSet rs, int rowNum) throws SQLException {
                           User user = new User();
+<<<<<<< Updated upstream
                           user.setUserId(rs.getInt("UserID"));
                           user.setUserName(rs.getString("UserName"));
                           user.setPassword(rs.getString("Password"));
                           user.setRoleId(rs.getInt("RoleID"));
+=======
+                          user.setUserID(rs.getInt("UserID"));
+                          user.setUserName(rs.getString("UserName"));
+                          user.setPassword(rs.getString("Password"));
+                          user.setRoleID(rs.getInt("RoleID"));
+>>>>>>> Stashed changes
                           return user;
                       }
                   }
@@ -139,15 +161,24 @@ public class UserRepository {
                 public void setValues(PreparedStatement ps) throws SQLException {
                     ps.setString(1, user.getUserName());
                     ps.setString(2, user.getPassword());
+<<<<<<< Updated upstream
                     ps.setInt(3, user.getRoleId());
                     ps.setInt(4, user.getUserId());
+=======
+                    ps.setInt(3, user.getRoleID());
+                    ps.setInt(4, user.getUserID());
+>>>>>>> Stashed changes
                 }
             }
         );
 		
      
         if (value > 0) {
+<<<<<<< Updated upstream
             user.setUserId(id);  
+=======
+            user.setUserID(id);  
+>>>>>>> Stashed changes
             return user;
         } else {
             return null;
@@ -155,5 +186,9 @@ public class UserRepository {
 
 
     } 
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
 }
