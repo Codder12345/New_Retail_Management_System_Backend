@@ -1,5 +1,6 @@
 package com.example.demo.Repository;
 
+import com.example.demo.Model.Product;
 import com.example.demo.Model.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,11 @@ public class UserRepository {
 
     
     public boolean isAddNewUser(User user) {
+
+
       int value = jdbcTemplate.update("insert into User(UserName, Password, RoleID) values(?, ?, ?)"
 , new PreparedStatementSetter() {
+
 
                 public void setValues(PreparedStatement ps) throws SQLException {
                     ps.setString(1, user.getUserName());
@@ -74,6 +78,8 @@ public class UserRepository {
     }
     
 
+
+
     public User searchUserById(int id) {
       
         list = jdbcTemplate.query("select * from User where UserID = ?",new PreparedStatementSetter() {
@@ -86,10 +92,12 @@ public class UserRepository {
                 @Override
                 public User mapRow(ResultSet rs, int rowNum) throws SQLException {
                     User user = new User();
+
                     user.setUserId(rs.getInt("UserID"));
                     user.setUserName(rs.getString("UserName"));
                     user.setPassword(rs.getString("Password"));
                     user.setRoleId(rs.getInt("RoleID"));
+
                     return user;
                 }
             }
@@ -116,11 +124,11 @@ public class UserRepository {
                       @Override
                       public User mapRow(ResultSet rs, int rowNum) throws SQLException {
                           User user = new User();
-                          user.setUserId(rs.getInt("UserID"));
+                 user.setUserID(rs.getInt("UserID"));
                           user.setUserName(rs.getString("UserName"));
                           user.setPassword(rs.getString("Password"));
-                          user.setRoleId(rs.getInt("RoleID"));
-                          return user;
+                          user.setRoleID(rs.getInt("RoleID"));
+          return user;
                       }
                   }
               );
@@ -141,6 +149,9 @@ public class UserRepository {
                     ps.setString(2, user.getPassword());
                     ps.setInt(3, user.getRoleId());
                     ps.setInt(4, user.getUserId());
+
+                
+
                 }
             }
         );

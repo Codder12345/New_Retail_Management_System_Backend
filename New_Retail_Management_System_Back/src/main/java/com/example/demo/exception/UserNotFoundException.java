@@ -1,7 +1,18 @@
 package com.example.demo.exception;
 
 public class UserNotFoundException extends RuntimeException {
-    public UserNotFoundException(String message) {
-        super(message);
-    }
+
+	
+	private String message;
+	public UserNotFoundException(String message)
+	{
+		super(message);
+		this.message =message;
+		
+		
+		
+	}
+
+
+
 }

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.Model.Product;
 
+import com.example.demo.Model.User;
+
 import com.example.demo.Repository.ProductRepository;
 @Service("proservice")
 public class ProductService {

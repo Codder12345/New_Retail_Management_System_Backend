@@ -28,6 +28,9 @@ public class UserService {
 		return useRepo.getAllUsers();
 		
 	}
+
+	
+
 	public User searchUserById(int id)
 	{
 		return useRepo.searchUserById(id);
