@@ -28,10 +28,9 @@ public class UserService {
 		return useRepo.getAllUsers();
 		
 	}
-<<<<<<< Updated upstream
-=======
+
 	
->>>>>>> Stashed changes
+
 	public User searchUserById(int id)
 	{
 		return useRepo.searchUserById(id);
@@ -45,9 +44,6 @@ public class UserService {
 	{
 		return useRepo.updateUserById(id, updateUser);
 	}
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 }
 
